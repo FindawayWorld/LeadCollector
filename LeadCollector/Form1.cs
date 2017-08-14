@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -97,17 +98,27 @@ namespace LeadCollector
         private void nextQuestion()
         {
             readTextBox();
-            if (currentPage <= 11)
+            if (currentPage <= 10)
             {
                 currentPage++;
                 try { label1.Text = questions[currentPage].ToUpper(); }
                 catch (Exception ex) { }
                 updateTextBox();
+                if (currentPage == 10)
+                {
+                    btnNext.Text = "SUBMIT";
+                }
+            }
+            if (currentPage > 10)
+            {
+                btnBack.Visible = false;
+                btnNext.Visible = false;
+                textBox1.Visible = false;
+                WriteLeadToCSV(lead);
             }
             
         }
 
-        
 
         public class Lead 
         {
@@ -146,6 +157,12 @@ namespace LeadCollector
                 currentPage--;
                 label1.Text = questions[currentPage].ToUpper();
                 updateTextBox();
+            }
+            if (currentPage <= 10)
+            {
+                btnBack.Visible = true;
+                btnNext.Visible = true;
+                textBox1.Visible = true;
             }
 
         }
@@ -193,6 +210,51 @@ namespace LeadCollector
                     textBox1.Text = lead.moreInfo;
                     break;
             }
+        }
+
+        private void GetCheckBoxValues()
+        {
+            List<string> productsUsed = new List<string>();
+            if (cbPlayaway.Checked)
+            {
+                productsUsed.Add("Playaway");
+            }
+            if (cbView.Checked)
+            {
+                productsUsed.Add("View");
+            }
+            if (cbBookpacks.Checked)
+            {
+                productsUsed.Add("Bookpacks");
+            }
+            if (cbLaunchpad.Checked)
+            {
+                productsUsed.Add("Launchpad");
+            }
+            if (cbLock.Checked)
+            {
+                productsUsed.Add("Lock");
+            }
+            string csvString = "";
+            int length = productsUsed.Count();
+            int counter = 1;
+            foreach (string product in productsUsed)
+            {
+                csvString = csvString + product;
+                if (counter > length)
+                {
+                    csvString = csvString + " & ";
+                }
+            }
+            lead.productsUsed = csvString;
+        }
+
+        private void WriteLeadToCSV(Lead lead)
+        {
+            GetCheckBoxValues();
+            lead.moreInfo = lead.moreInfo.Replace(",", " [comma] ");
+            string csvString = lead.firstName + "," + lead.lastName + "," + lead.organizationName + "," + lead.organizationType + "," + lead.title + "," + lead.city + "," + lead.state + "," + lead.email + "," + lead.phone + "," + lead.productsUsed + "," + lead.moreInfo + ",";
+            
         }
     }
 
