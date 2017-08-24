@@ -18,7 +18,7 @@ namespace LeadCollector
 
         //public static int currentPage = 0;
         //public static string[] questions = { "What is your first name?", "What is your last name?", "What is your organization's\nname?", "What is your organization\ntype?", "What is your title?", "What is your city?", "What is your state?", "What is your email?", "What is your phone number?", "What products do you use?", "Anything else you'd like to\ntell us?", "Thank you!" };
-        public static string csvColumnNames = "First Name,Last Name,Organizaiton Name,Organization Type,Title,City,State,Email,Phone,Products Used,More Info\r\n";
+        public static string csvColumnNames = "First Name,Last Name,Organizaiton Name,Organization Type,Title,City,State,Email,Phone,Playaway,View,Bookpacks,Launchpad,Lock,More Info\r\n";
         public static string myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public static DirectoryInfo di = new DirectoryInfo(Path.Combine(myDocumentsPath, "Lead Collector Leads"));
         public static string csvPath;
@@ -131,7 +131,11 @@ namespace LeadCollector
             public string state;
             public string email;
             public string phone;
-            public string productsUsed;
+            public string playaway;
+            public string view;
+            public string bookpacks;
+            public string launchpad;
+            public string playawayLock;
             public string moreInfo;
 
             public Lead()
@@ -145,7 +149,11 @@ namespace LeadCollector
                 this.state = "";
                 this.email = "";
                 this.phone = "";
-                this.productsUsed = "";
+                this.playaway = "";
+                this.view = "";
+                this.bookpacks = "";
+                this.launchpad = "";
+                this.playawayLock = "";
                 this.moreInfo = "";
             }
         }
@@ -217,36 +225,24 @@ namespace LeadCollector
             List<string> productsUsed = new List<string>();
             if (cbPlayaway.Checked)
             {
-                productsUsed.Add("Playaway");
+                lead.playaway = "X";
             }
             if (cbView.Checked)
             {
-                productsUsed.Add("View");
+                lead.view = "X";
             }
             if (cbBookpacks.Checked)
             {
-                productsUsed.Add("Bookpacks");
+                lead.bookpacks = "X";
             }
             if (cbLaunchpad.Checked)
             {
-                productsUsed.Add("Launchpad");
+                lead.launchpad = "X";
             }
             if (cbLock.Checked)
             {
-                productsUsed.Add("Lock");
+                lead.playawayLock = "X";
             }
-            string csvString = "";
-            int length = productsUsed.Count();
-            int counter = 1;
-            foreach (string product in productsUsed)
-            {
-                csvString = csvString + product;
-                if (counter > length)
-                {
-                    csvString = csvString + " & ";
-                }
-            }
-            lead.productsUsed = csvString;
         }
 
         private void WriteLeadToCSV(Lead lead)
@@ -292,7 +288,7 @@ namespace LeadCollector
                 }
             }
             GetCheckBoxValues();
-            string csvString = tbFirstName.Text + "," + tbLastName.Text + "," + tbOrganizationName.Text + "," + cbOrganizationType.Text + "," + tbTitle.Text + "," + tbCity.Text + "," + tbState.Text + "," + tbEmail.Text + "," + tbPhone.Text + "," + lead.productsUsed + "," + tbMoreInfo.Text + "\r\n";
+            string csvString = tbFirstName.Text + "," + tbLastName.Text + "," + tbOrganizationName.Text + "," + cbOrganizationType.Text + "," + tbTitle.Text + "," + tbCity.Text + "," + tbState.Text + "," + tbEmail.Text + "," + tbPhone.Text + "," + lead.playaway + "," + lead.view + "," + lead.bookpacks + "," + lead.launchpad + "," + lead.playawayLock + "," + tbMoreInfo.Text + "\r\n";
             File.AppendAllText(csvPath, csvString);
         }
 
@@ -313,6 +309,12 @@ namespace LeadCollector
             cbLock.Checked = false;
             cbLaunchpad.Checked = false;
             cbBookpacks.Checked = false;
+            lead.playaway = "";
+            lead.view = "";
+            lead.bookpacks = "";
+            lead.launchpad = "";
+            lead.playawayLock = "";
+
         }
 
         private void tbFirstName_KeyDown(object sender, KeyEventArgs e)
