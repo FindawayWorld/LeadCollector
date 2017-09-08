@@ -18,7 +18,7 @@ namespace LeadCollector
 
         //public static int currentPage = 0;
         //public static string[] questions = { "What is your first name?", "What is your last name?", "What is your organization's\nname?", "What is your organization\ntype?", "What is your title?", "What is your city?", "What is your state?", "What is your email?", "What is your phone number?", "What products do you use?", "Anything else you'd like to\ntell us?", "Thank you!" };
-        public static string csvColumnNames = "First Name,Last Name,Organizaiton Name,Organization Type,Title,City,State,Email,Phone,Playaway,View,Bookpacks,Launchpad,Lock,More Info\r\n";
+        public static string csvColumnNames = "First Name,Last Name,Organizaiton Name,Organization Type,Title,City,State,Email,Phone,Playaway,View,Bookpacks,Launchpad Apps,Launchpad Comics,Launchpad Video,Lock,More Info\r\n";
         public static string myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public static DirectoryInfo di = new DirectoryInfo(Path.Combine(myDocumentsPath, "Lead Collector Leads"));
         public static string csvPath;
@@ -26,10 +26,15 @@ namespace LeadCollector
 
         public Form1()
         {
+            
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
+            panel1.Location = new Point(
+                this.ClientSize.Width / 2 - panel1.Size.Width / 2,
+                this.ClientSize.Height / 2 - panel1.Size.Height / 2);
+            panel1.Anchor = AnchorStyles.None;
             if (!di.Exists)
             {
                 di.Create();
@@ -134,7 +139,9 @@ namespace LeadCollector
             public string playaway;
             public string view;
             public string bookpacks;
-            public string launchpad;
+            public string launchpadApps;
+            public string launchpadComics;
+            public string launchpadVideo;
             public string playawayLock;
             public string moreInfo;
 
@@ -152,7 +159,9 @@ namespace LeadCollector
                 this.playaway = "";
                 this.view = "";
                 this.bookpacks = "";
-                this.launchpad = "";
+                this.launchpadApps = "";
+                this.launchpadComics = "";
+                this.launchpadVideo = "";
                 this.playawayLock = "";
                 this.moreInfo = "";
             }
@@ -237,7 +246,15 @@ namespace LeadCollector
             }
             if (cbLaunchpad.Checked)
             {
-                lead.launchpad = "X";
+                lead.launchpadApps = "X";
+            }
+            if (cbComics.Checked)
+            {
+                lead.launchpadComics = "X";
+            }
+            if (cbVideo.Checked)
+            {
+                lead.launchpadVideo = "X";
             }
             if (cbLock.Checked)
             {
@@ -270,13 +287,13 @@ namespace LeadCollector
                 pass = false;
                 errors = errors + "Last Name";
             }
-            tbOrganizationName.Text = ScrubCommas(tbOrganizationName.Text);
-            tbTitle.Text = ScrubCommas(tbTitle.Text);
-            tbCity.Text = ScrubCommas(tbCity.Text);
-            tbState.Text = ScrubCommas(tbState.Text);
-            tbEmail.Text = ScrubCommas(tbEmail.Text);
-            tbPhone.Text = ScrubCommas(tbPhone.Text);
-            tbMoreInfo.Text = ScrubCommas(tbMoreInfo.Text);
+                tbOrganizationName.Text = ScrubCommas(tbOrganizationName.Text);
+                tbTitle.Text = ScrubCommas(tbTitle.Text);
+                tbCity.Text = ScrubCommas(tbCity.Text);
+                comboBoxState.Text = ScrubCommas(comboBoxState.Text);
+                tbEmail.Text = ScrubCommas(tbEmail.Text);
+                tbPhone.Text = ScrubCommas(tbPhone.Text);
+                tbMoreInfo.Text = ScrubCommas(tbMoreInfo.Text);
 
             if (csvPath == null)
             {
@@ -288,8 +305,16 @@ namespace LeadCollector
                 }
             }
             GetCheckBoxValues();
-            string csvString = tbFirstName.Text + "," + tbLastName.Text + "," + tbOrganizationName.Text + "," + cbOrganizationType.Text + "," + tbTitle.Text + "," + tbCity.Text + "," + tbState.Text + "," + tbEmail.Text + "," + tbPhone.Text + "," + lead.playaway + "," + lead.view + "," + lead.bookpacks + "," + lead.launchpad + "," + lead.playawayLock + "," + tbMoreInfo.Text + "\r\n";
-            File.AppendAllText(csvPath, csvString);
+            string csvString = tbFirstName.Text + "," + tbLastName.Text + "," + tbOrganizationName.Text + "," + cbOrganizationType.Text + "," + tbTitle.Text + "," + tbCity.Text + "," + comboBoxState.Text + "," + tbEmail.Text + "," + tbPhone.Text + "," + lead.playaway + "," + lead.view + "," + lead.bookpacks + "," + lead.launchpadApps + "," + lead.launchpadComics + "," + lead.launchpadVideo + "," + lead.playawayLock + "," + tbMoreInfo.Text + "\r\n";
+            try
+            {
+                File.AppendAllText(csvPath, csvString);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                throw;
+            }
         }
 
         private void ClearInputFields()
@@ -297,10 +322,10 @@ namespace LeadCollector
             tbFirstName.Text = "";
             tbLastName.Text = "";
             tbOrganizationName.Text = "";
-            cbOrganizationType.Text = "Select one...";
+            cbOrganizationType.Text = "Select a type...";
             tbTitle.Text = "";
             tbCity.Text = "";
-            tbState.Text = "";
+            comboBoxState.Text = "Select a state...";
             tbEmail.Text = "";
             tbPhone.Text = "";
             tbMoreInfo.Text = "";
@@ -312,7 +337,9 @@ namespace LeadCollector
             lead.playaway = "";
             lead.view = "";
             lead.bookpacks = "";
-            lead.launchpad = "";
+            lead.launchpadApps = "";
+            lead.launchpadComics = "";
+            lead.launchpadVideo = "";
             lead.playawayLock = "";
 
         }
@@ -406,13 +433,13 @@ namespace LeadCollector
             requiedFields.Add("Organization Name", tbOrganizationName.Text);
             requiedFields.Add("Organization Type", cbOrganizationType.Text);
             requiedFields.Add("City", tbCity.Text);
-            requiedFields.Add("State", tbState.Text);
+            requiedFields.Add("State", comboBoxState.Text);
             requiedFields.Add("Email", tbEmail.Text);
             bool pass = true;
             string missingFields = "";
             foreach(KeyValuePair<string, string> field in requiedFields)
             {
-                if (field.Value == "" || field.Value.ToLower() == "select one...")
+                if (field.Value == "" || field.Value.ToLower() == "select a type..." || field.Value.ToLower() == "select a state...")
                 {
                     missingFields = missingFields + field.Key + "\r\n";
                     pass = false;
@@ -480,5 +507,6 @@ namespace LeadCollector
             }
             return data;
         }
+        
     }
 }
