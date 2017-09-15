@@ -507,6 +507,79 @@ namespace LeadCollector
             }
             return data;
         }
+
         
+
+        private void pictureBoxPlayaway_Click(object sender, EventArgs e)
+        {
+            if (cbPlayaway.Checked == false)
+            {
+                cbPlayaway.Checked = true;
+            }
+            else
+            {
+                cbPlayaway.Checked = false;
+            }
+        }
+
+        private void pictureBoxLock_Click(object sender, EventArgs e)
+        {
+            if (cbLock.Checked == false)
+            {
+                cbLock.Checked = true;
+            }
+            else
+            {
+                cbLock.Checked = false;
+            }
+        }
+
+        private void pictureBoxView_Click(object sender, EventArgs e)
+        {
+            if (cbView.Checked == false)
+            {
+                cbView.Checked = true;
+            }
+            else
+            {
+                cbView.Checked = false;
+            }
+        }
+
+        private void pictureBoxApps_Click(object sender, EventArgs e)
+        {
+            if (cbLaunchpad.Checked == false)
+            {
+                cbLaunchpad.Checked = true;
+            }
+            else
+            {
+                cbLaunchpad.Checked = false;
+            }
+        }
+
+        private void pictureBoxComics_Click(object sender, EventArgs e)
+        {
+            if (cbComics.Checked == false)
+            {
+                cbComics.Checked = true;
+            }
+            else
+            {
+                cbComics.Checked = false;
+            }
+        }
+
+        private void pictureBoxVideo_Click(object sender, EventArgs e)
+        {
+            if (cbVideo.Checked == false)
+            {
+                cbVideo.Checked = true;
+            }
+            else
+            {
+                cbVideo.Checked = false;
+            }
+        }
     }
 }
