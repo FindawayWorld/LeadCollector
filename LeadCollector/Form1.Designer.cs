@@ -54,6 +54,7 @@
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.panelCheckBoxes = new System.Windows.Forms.Panel();
+            this.pictureBoxBookpacks = new System.Windows.Forms.PictureBox();
             this.pictureBoxView = new System.Windows.Forms.PictureBox();
             this.pictureBoxLock = new System.Windows.Forms.PictureBox();
             this.cbBookpacks = new System.Windows.Forms.CheckBox();
@@ -68,9 +69,9 @@
             this.cbPlayaway = new System.Windows.Forms.CheckBox();
             this.cbLaunchpad = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelCheckBoxes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookpacks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApps)).BeginInit();
@@ -78,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayaway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbFirstName
@@ -433,7 +433,7 @@
             // panelCheckBoxes
             // 
             this.panelCheckBoxes.BackColor = System.Drawing.Color.Transparent;
-            this.panelCheckBoxes.Controls.Add(this.pictureBox2);
+            this.panelCheckBoxes.Controls.Add(this.pictureBoxBookpacks);
             this.panelCheckBoxes.Controls.Add(this.pictureBoxView);
             this.panelCheckBoxes.Controls.Add(this.pictureBoxLock);
             this.panelCheckBoxes.Controls.Add(this.cbBookpacks);
@@ -452,6 +452,17 @@
             this.panelCheckBoxes.Name = "panelCheckBoxes";
             this.panelCheckBoxes.Size = new System.Drawing.Size(517, 220);
             this.panelCheckBoxes.TabIndex = 30;
+            // 
+            // pictureBoxBookpacks
+            // 
+            this.pictureBoxBookpacks.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBookpacks.Image")));
+            this.pictureBoxBookpacks.Location = new System.Drawing.Point(435, 23);
+            this.pictureBoxBookpacks.Name = "pictureBoxBookpacks";
+            this.pictureBoxBookpacks.Size = new System.Drawing.Size(69, 66);
+            this.pictureBoxBookpacks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBookpacks.TabIndex = 17;
+            this.pictureBoxBookpacks.TabStop = false;
+            this.pictureBoxBookpacks.Click += new System.EventHandler(this.pictureBoxBookpacks_Click);
             // 
             // pictureBoxView
             // 
@@ -622,16 +633,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(435, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(69, 66);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +652,7 @@
             this.panel1.PerformLayout();
             this.panelCheckBoxes.ResumeLayout(false);
             this.panelCheckBoxes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookpacks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApps)).EndInit();
@@ -658,7 +660,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayaway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -703,7 +704,7 @@
         private System.Windows.Forms.PictureBox pictureBoxVideo;
         private System.Windows.Forms.PictureBox pictureBoxComics;
         private System.Windows.Forms.PictureBox pictureBoxPlayaway;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxBookpacks;
     }
 }
 

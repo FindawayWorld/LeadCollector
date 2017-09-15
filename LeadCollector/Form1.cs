@@ -581,5 +581,17 @@ namespace LeadCollector
                 cbVideo.Checked = false;
             }
         }
+
+        private void pictureBoxBookpacks_Click(object sender, EventArgs e)
+        {
+            if (cbBookpacks.Checked == false)
+            {
+                cbBookpacks.Checked = true;
+            }
+            else
+            {
+                cbBookpacks.Checked = false;
+            }
+        }
     }
 }
