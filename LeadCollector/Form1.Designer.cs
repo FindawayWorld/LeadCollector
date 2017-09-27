@@ -54,14 +54,14 @@
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.panelCheckBoxes = new System.Windows.Forms.Panel();
+            this.cbBookpacks = new System.Windows.Forms.CheckBox();
+            this.cbVideo = new System.Windows.Forms.CheckBox();
+            this.cbView = new System.Windows.Forms.CheckBox();
+            this.cbComics = new System.Windows.Forms.CheckBox();
+            this.cbLock = new System.Windows.Forms.CheckBox();
             this.cbPlayaway = new System.Windows.Forms.CheckBox();
             this.cbLaunchpad = new System.Windows.Forms.CheckBox();
-            this.cbView = new System.Windows.Forms.CheckBox();
-            this.cbLock = new System.Windows.Forms.CheckBox();
-            this.cbBookpacks = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbComics = new System.Windows.Forms.CheckBox();
-            this.cbVideo = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panelCheckBoxes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,7 +108,7 @@
             this.panel1.Location = new System.Drawing.Point(215, 58);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 669);
+            this.panel1.Size = new System.Drawing.Size(767, 762);
             this.panel1.TabIndex = 4;
             // 
             // label7
@@ -116,7 +116,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(268, 615);
+            this.label7.Location = new System.Drawing.Point(276, 652);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(223, 20);
             this.label7.TabIndex = 31;
@@ -194,7 +194,7 @@
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDone.Location = new System.Drawing.Point(311, 556);
+            this.btnDone.Location = new System.Drawing.Point(319, 593);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(138, 56);
             this.btnDone.TabIndex = 16;
@@ -207,7 +207,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(2, 457);
+            this.label6.Location = new System.Drawing.Point(2, 467);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(381, 25);
             this.label6.TabIndex = 29;
@@ -216,7 +216,7 @@
             // tbMoreInfo
             // 
             this.tbMoreInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMoreInfo.Location = new System.Drawing.Point(389, 386);
+            this.tbMoreInfo.Location = new System.Drawing.Point(389, 401);
             this.tbMoreInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tbMoreInfo.Multiline = true;
             this.tbMoreInfo.Name = "tbMoreInfo";
@@ -229,7 +229,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(176, 313);
+            this.label5.Location = new System.Drawing.Point(176, 333);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(207, 25);
             this.label5.TabIndex = 28;
@@ -419,25 +419,90 @@
             // panelCheckBoxes
             // 
             this.panelCheckBoxes.BackColor = System.Drawing.Color.Transparent;
+            this.panelCheckBoxes.Controls.Add(this.cbBookpacks);
             this.panelCheckBoxes.Controls.Add(this.cbVideo);
+            this.panelCheckBoxes.Controls.Add(this.cbView);
             this.panelCheckBoxes.Controls.Add(this.cbComics);
+            this.panelCheckBoxes.Controls.Add(this.cbLock);
             this.panelCheckBoxes.Controls.Add(this.cbPlayaway);
             this.panelCheckBoxes.Controls.Add(this.cbLaunchpad);
-            this.panelCheckBoxes.Controls.Add(this.cbView);
-            this.panelCheckBoxes.Controls.Add(this.cbLock);
-            this.panelCheckBoxes.Controls.Add(this.cbBookpacks);
-            this.panelCheckBoxes.Location = new System.Drawing.Point(389, 284);
+            this.panelCheckBoxes.Location = new System.Drawing.Point(389, 285);
             this.panelCheckBoxes.Margin = new System.Windows.Forms.Padding(2);
             this.panelCheckBoxes.Name = "panelCheckBoxes";
-            this.panelCheckBoxes.Size = new System.Drawing.Size(343, 98);
+            this.panelCheckBoxes.Size = new System.Drawing.Size(343, 112);
             this.panelCheckBoxes.TabIndex = 30;
+            // 
+            // cbBookpacks
+            // 
+            this.cbBookpacks.AutoSize = true;
+            this.cbBookpacks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBookpacks.ForeColor = System.Drawing.Color.White;
+            this.cbBookpacks.Location = new System.Drawing.Point(208, 14);
+            this.cbBookpacks.Margin = new System.Windows.Forms.Padding(2);
+            this.cbBookpacks.Name = "cbBookpacks";
+            this.cbBookpacks.Size = new System.Drawing.Size(89, 17);
+            this.cbBookpacks.TabIndex = 14;
+            this.cbBookpacks.Text = "Bookpacks";
+            this.cbBookpacks.UseVisualStyleBackColor = true;
+            // 
+            // cbVideo
+            // 
+            this.cbVideo.AutoSize = true;
+            this.cbVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVideo.ForeColor = System.Drawing.Color.White;
+            this.cbVideo.Location = new System.Drawing.Point(17, 77);
+            this.cbVideo.Margin = new System.Windows.Forms.Padding(2);
+            this.cbVideo.Name = "cbVideo";
+            this.cbVideo.Size = new System.Drawing.Size(125, 17);
+            this.cbVideo.TabIndex = 16;
+            this.cbVideo.Text = "Launchpad Video";
+            this.cbVideo.UseVisualStyleBackColor = true;
+            // 
+            // cbView
+            // 
+            this.cbView.AutoSize = true;
+            this.cbView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbView.ForeColor = System.Drawing.Color.White;
+            this.cbView.Location = new System.Drawing.Point(208, 56);
+            this.cbView.Margin = new System.Windows.Forms.Padding(2);
+            this.cbView.Name = "cbView";
+            this.cbView.Size = new System.Drawing.Size(53, 17);
+            this.cbView.TabIndex = 13;
+            this.cbView.Text = "View";
+            this.cbView.UseVisualStyleBackColor = true;
+            // 
+            // cbComics
+            // 
+            this.cbComics.AutoSize = true;
+            this.cbComics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbComics.ForeColor = System.Drawing.Color.White;
+            this.cbComics.Location = new System.Drawing.Point(17, 56);
+            this.cbComics.Margin = new System.Windows.Forms.Padding(2);
+            this.cbComics.Name = "cbComics";
+            this.cbComics.Size = new System.Drawing.Size(133, 17);
+            this.cbComics.TabIndex = 15;
+            this.cbComics.Text = "Launchpad Comics";
+            this.cbComics.UseVisualStyleBackColor = true;
+            // 
+            // cbLock
+            // 
+            this.cbLock.AutoSize = true;
+            this.cbLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLock.ForeColor = System.Drawing.Color.White;
+            this.cbLock.Location = new System.Drawing.Point(208, 35);
+            this.cbLock.Margin = new System.Windows.Forms.Padding(2);
+            this.cbLock.Name = "cbLock";
+            this.cbLock.Size = new System.Drawing.Size(106, 17);
+            this.cbLock.TabIndex = 11;
+            this.cbLock.Text = "Lock eReader";
+            this.cbLock.UseVisualStyleBackColor = true;
             // 
             // cbPlayaway
             // 
             this.cbPlayaway.AutoSize = true;
             this.cbPlayaway.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPlayaway.ForeColor = System.Drawing.Color.White;
-            this.cbPlayaway.Location = new System.Drawing.Point(14, 8);
+            this.cbPlayaway.Location = new System.Drawing.Point(17, 14);
             this.cbPlayaway.Margin = new System.Windows.Forms.Padding(2);
             this.cbPlayaway.Name = "cbPlayaway";
             this.cbPlayaway.Size = new System.Drawing.Size(79, 17);
@@ -450,52 +515,13 @@
             this.cbLaunchpad.AutoSize = true;
             this.cbLaunchpad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLaunchpad.ForeColor = System.Drawing.Color.White;
-            this.cbLaunchpad.Location = new System.Drawing.Point(14, 30);
+            this.cbLaunchpad.Location = new System.Drawing.Point(17, 35);
             this.cbLaunchpad.Margin = new System.Windows.Forms.Padding(2);
             this.cbLaunchpad.Name = "cbLaunchpad";
             this.cbLaunchpad.Size = new System.Drawing.Size(121, 17);
             this.cbLaunchpad.TabIndex = 12;
             this.cbLaunchpad.Text = "Launchpad Apps";
             this.cbLaunchpad.UseVisualStyleBackColor = true;
-            // 
-            // cbView
-            // 
-            this.cbView.AutoSize = true;
-            this.cbView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbView.ForeColor = System.Drawing.Color.White;
-            this.cbView.Location = new System.Drawing.Point(189, 50);
-            this.cbView.Margin = new System.Windows.Forms.Padding(2);
-            this.cbView.Name = "cbView";
-            this.cbView.Size = new System.Drawing.Size(53, 17);
-            this.cbView.TabIndex = 13;
-            this.cbView.Text = "View";
-            this.cbView.UseVisualStyleBackColor = true;
-            // 
-            // cbLock
-            // 
-            this.cbLock.AutoSize = true;
-            this.cbLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLock.ForeColor = System.Drawing.Color.White;
-            this.cbLock.Location = new System.Drawing.Point(189, 29);
-            this.cbLock.Margin = new System.Windows.Forms.Padding(2);
-            this.cbLock.Name = "cbLock";
-            this.cbLock.Size = new System.Drawing.Size(106, 17);
-            this.cbLock.TabIndex = 11;
-            this.cbLock.Text = "Lock eReader";
-            this.cbLock.UseVisualStyleBackColor = true;
-            // 
-            // cbBookpacks
-            // 
-            this.cbBookpacks.AutoSize = true;
-            this.cbBookpacks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBookpacks.ForeColor = System.Drawing.Color.White;
-            this.cbBookpacks.Location = new System.Drawing.Point(189, 8);
-            this.cbBookpacks.Margin = new System.Windows.Forms.Padding(2);
-            this.cbBookpacks.Name = "cbBookpacks";
-            this.cbBookpacks.Size = new System.Drawing.Size(89, 17);
-            this.cbBookpacks.TabIndex = 14;
-            this.cbBookpacks.Text = "Bookpacks";
-            this.cbBookpacks.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -509,39 +535,13 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // cbComics
-            // 
-            this.cbComics.AutoSize = true;
-            this.cbComics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbComics.ForeColor = System.Drawing.Color.White;
-            this.cbComics.Location = new System.Drawing.Point(14, 51);
-            this.cbComics.Margin = new System.Windows.Forms.Padding(2);
-            this.cbComics.Name = "cbComics";
-            this.cbComics.Size = new System.Drawing.Size(133, 17);
-            this.cbComics.TabIndex = 15;
-            this.cbComics.Text = "Launchpad Comics";
-            this.cbComics.UseVisualStyleBackColor = true;
-            // 
-            // cbVideo
-            // 
-            this.cbVideo.AutoSize = true;
-            this.cbVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbVideo.ForeColor = System.Drawing.Color.White;
-            this.cbVideo.Location = new System.Drawing.Point(14, 72);
-            this.cbVideo.Margin = new System.Windows.Forms.Padding(2);
-            this.cbVideo.Name = "cbVideo";
-            this.cbVideo.Size = new System.Drawing.Size(125, 17);
-            this.cbVideo.TabIndex = 16;
-            this.cbVideo.Text = "Launchpad Video";
-            this.cbVideo.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::LeadCollector.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1196, 738);
+            this.ClientSize = new System.Drawing.Size(1196, 912);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
